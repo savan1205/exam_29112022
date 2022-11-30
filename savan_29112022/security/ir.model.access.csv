@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+savan_29112022.access_surplus_charges_user,access_surplus_charges_user,savan_29112022.model_surplus_charges_configuration,savan_29112022.security_user_access,1,0,0,0
+
+savan_29112022.access_surplus_charges_manager,access_surplus_charges_manager,savan_29112022.model_surplus_charges_configuration,savan_29112022.security_manager_access,1,1,1,1
+
+savan_29112022.access_surplus_charges_wizard,access_surplus_charges_wizard,savan_29112022.model_surplus_charges_wizard,base.group_user,1,1,1,1

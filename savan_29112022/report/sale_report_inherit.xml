@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="report_sale_inherit" inherit_id="sale.report_saleorder_document">
+            <xpath expr="//tbody//tr[1]" position="attributes">
+                <attribute name="colors">blue</attribute>           
+            </xpath>         
+        </template>
+    </data>
+</odoo>        
