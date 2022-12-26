@@ -1,9 +1,15 @@
 <odoo>
     <data>
         <template id="report_sale_inherit" inherit_id="sale.report_saleorder_document">
-            <xpath expr="//tbody//tr[1]" position="attributes">
-                <attribute name="colors">blue</attribute>           
-            </xpath>         
+            <xpath expr="//td[@name='td_priceunit']" position="after">
+                <td name="td_is_surplus_charge" class="text-right">
+                    <span t-field="line.is_surplus_charge"/>
+                </td>
+            </xpath>
+<!--            <xpath expr="//tbody[hasclass('sale_tbody')]" position="attributes">-->
+<!--                <attribute name="t-att-class">"'text-success' if line.is_surplus_charge==True "</attribute>-->
+<!--                <attribute name="t-att-class">'d-none' if booth_category.use_sponsor else ''</attribute>-->
+<!--            </xpath>-->
         </template>
     </data>
 </odoo>        

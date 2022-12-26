@@ -7,21 +7,18 @@
                 <sheet>
                     <group>
                         <field name="sale_order_id"/>
-                        <field name="product_id"/>
+                        <field name="product_id" domain="[('start_date','&lt;', context_today().strftime('%Y-%m-%d'))]"/>
                         <field name="surplus_charges"/>
-                        <field name="start_date"/>                                               
+                        <field name="start_date"/>
                     </group>
-                    
                     <footer>
-                        <button name="btn_add" class="btn-primary" type="object" string="Add Surplus charges"/>
-                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                        <button class="btn-primary" name="btn_add" string="Add Surplus charges" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
                     </footer>
                 </sheet>
             </form>
         </field>
     </record>
-
-
     <record id="action_wizard_charges" model="ir.actions.act_window">
         <field name="name">Add Charges</field>
         <field name="type">ir.actions.act_window</field>

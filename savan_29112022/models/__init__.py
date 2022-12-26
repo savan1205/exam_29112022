@@ -1,1 +1,1 @@
-from . import surplus_charge_rules, product_product,sale_order
+from . import surplus_charge_rules, product_product,sale_order,res_partner,res_config_settings

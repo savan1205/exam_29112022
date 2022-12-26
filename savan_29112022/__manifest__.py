@@ -1,8 +1,8 @@
 {
     'name': 'Surplus Charges',
-    'version': '15.0.1.1',
+    'version': '15.0.1.0.0',
     'summary': 'Apply Surplus Charges',
-    'sequence': 9,
+    'sequence': 1,
     'description': """
         This module contains all the features of Configuring Sales Orders to add Surplus Charges to them.
     """,
@@ -19,6 +19,8 @@
         'views/product_product_views.xml',
         'views/surplus_charges_rules_views.xml',
         'views/sale_order_inherit_views.xml',
+        'views/res_partner_views.xml',
+        'views/res_config_settings_views.xml',
 
     ],
     'demo': [],

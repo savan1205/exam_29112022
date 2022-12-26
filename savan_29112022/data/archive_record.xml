@@ -1,10 +1,10 @@
 <odoo>
       <data>
-            <record model="ir.cron" id="check_end_date_cron">
-                  <field name="name">Check Date</field>
+            <record model="ir.cron" id="check_charge_validity">
+                  <field name="name">Check Charge Validity</field>
                   <field name="model_id" ref="model_surplus_charges_configuration"/>
                   <field name="state">code</field>
-                  <field name="code">model.check_end_date()</field>
+                  <field name="code">model.cron_check_charge_validity()</field>
                   <field name="interval_number">1</field>
                   <field name="interval_type">days</field>
                   <field name="numbercall">-1</field>

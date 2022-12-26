@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_sale" model="ir.ui.view">
+        <field name="name">Contacts</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[@name='sale']" position="inside">
+                <field name = "is_vendor"  attrs="{'invisible': [('is_sale', '=', True)]}"/>
+                <field name = "is_sale" attrs="{'invisible': [('is_vendor', '=', True)]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+    <record id="action_is_vendor" model="ir.actions.act_window">
+        <field name="name">Is Vendor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('is_vendor','=',True)]</field>
+        <field name="view_mode" >kanban,tree,form</field>
+
+    </record>
+
+    <record id="action_is_sale" model="ir.actions.act_window">
+        <field name="name">Is Sale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="domain">[('is_sale','=',True)]</field>
+        <field name="view_mode" >kanban,tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_res_partner_is_vendor"
+              name='Is Vendor'
+              action="action_is_vendor"
+              parent="contacts.menu_contacts"
+              sequence='3'/>
+
+    <menuitem id="menu_res_partner_is_sale"
+              name='Is Sale'
+              action="action_is_sale"
+              parent="contacts.menu_contacts"
+              sequence='4'/>
+</odoo>

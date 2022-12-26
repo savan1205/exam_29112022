@@ -1,21 +1,24 @@
 <odoo>
-    <record id="view_sale" model="ir.ui.view">
+    <record id="view_sale_inherit" model="ir.ui.view">
         <field name="name">sale order</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='tax_totals_json']" position="after">
+                <field name = "extra_charges"/>
+            </xpath>
             <xpath expr="//field[@name='order_line']" position="before">
-                <button class="oe_highlight" string="Add charges" name="%(savan_29112022.action_wizard_charges)d" type="action" attrs="{'invisible':[('state','=','sale')]}">                  
-                </button>
+                <button class="oe_highlight" string="Add charges" name="get_surplus_charge" type="object" attrs="{'invisible':[('state','in',('sale','cancel'))]}"/>
+            </xpath>
+
+            <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_uom_qty']" position="before">
+                <field name='is_surplus_charge' invisible="True"/>
             </xpath>
 
             <xpath expr="//tree[1]" position="attributes">
-                <attribute name="colors">blue</attribute>
+                <attribute name="decoration-info">is_surplus_charge==True</attribute>
             </xpath>
-
-            <!-- <xpath expr="/form/sheet/notebook/page/field[@name='order_line']/tree/field[@name='product_uom_qty']" position="before">
-                <field name='surplus_charge'/>
-            </xpath> -->
         </field>
     </record>
 </odoo>

@@ -1,4 +1,4 @@
-python3 odoo-bin --addons-path=addons/,/home/odoo/Desktop/examModule --xmlrpc-port 2000 -d v15eggjam -u exam_module
+python3 odoo-bin --addons-path=addons/,/home/odoo/Desktop/workspace/exam_29112022 --xmlrpc-port 2001 -d v15SurplusCharges -u savan_29112022
 
 savan_29112022.access_surplus_charges_configuration,access_surplus_charges_configuration,savan_29112022.model_surplus_charges_configuration,base.group_user,1,1,1,1
 
